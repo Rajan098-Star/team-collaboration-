@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; }
+        .navbar { background-color: #2563eb; color: white; padding: 16px; display: flex; justify-content: space-between; align-items: center; position: relative; }
+        .menu { display: flex; gap: 16px; }
+        .menu a, .menu button { color: white; text-decoration: none; background: none; border: none; font-size: 16px; cursor: pointer; }
+        .hero { height: 100vh; background: url('Russian.gif') center/cover no-repeat; display: flex; justify-content: center; align-items: center; color: white; font-size: 24px; font-weight: bold; text-align: center; }
+        .hero div { background: rgba(0, 0, 0, 0.5); padding: 20px; border-radius: 8px; }
+        .three-columns { padding: 40px; background: #f3f4f6; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .column { background: white; padding: 16px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-radius: 8px; text-align: center; }
+        .column img { width: 100%; border-radius: 8px; }
+        .footer { background: #2563eb; color: white; text-align: center; padding: 16px; }
+        .modal { display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; }
+        .modal-content { background: white; padding: 20px; border-radius: 8px; text-align: center; }
+    </style>
+</head>
+<body>
+    <section id="hero" class="hero">
+        <div><h1>Most demanded cars in Russia</h1></div>
+    </section>
+    <section id="three-columns" class="three-columns">
+        <div class="column">
+            <img src="Koenigsegg.jpeg" alt="Koenigsegg">
+            <h3>Koenigsegg</h3>
+            <p>Koenigsegg is a Swedish manufacturer known for producing high-performance hypercars with cutting-edge technology and innovative engineering. The company is renowned for its exceptional speed, exclusive designs, and groundbreaking achievements in automotive performance.</p>
+        </div>
+        <div class="column">
+            <img src="Urus.jpeg" alt="Urus">
+            <h3>Urus</h3>
+            <p>The Lamborghini Urus is a luxury SUV produced by the Italian manufacturer Lamborghini. Combining the performance of a sports car with the versatility of an SUV, the Urus is designed to offer both extreme power and comfort. It is known for its bold design and advanced technology.</p>
+        </div>
+        <div class="column">
+            <img src="McLaren.jpg" alt="McLaren">
+            <h3>McLaren</h3>
+            <p>McLaren Automotive is a British manufacturer of luxury, high-performance sports cars. The company is known for its success in motorsports, especially Formula 1, and produces road cars that incorporate advanced aerodynamics, lightweight construction, and powerful engines.</p>
+        </div>
+    </section>
+    <footer class="footer">&copy; 2025 All rights reserved.</footer>
+    <div class="modal" id="copyright-modal">
+        <div class="modal-content">
+            <p>&copy; 2025 All rights reserved.</p>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+    <script>
+        function showModal() {
+            document.getElementById('copyright-modal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('copyright-modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
