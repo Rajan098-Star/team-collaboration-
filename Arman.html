@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 5 Places in USA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .card h3 {
+            margin: 15px 0 10px;
+            font-size: 20px;
+        }
+        .card p {
+            font-size: 16px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>Welcome to USA</header>
+    <div class="container" id="places"></div>
+    <script>
+        const places = [
+            { name: "Grand Canyon", image: "https://th.bing.com/th/id/R.129e6cc352b1b28feb0d4c301f35ca2a?rik=nUZf0656MlSbhg&pid=ImgRaw&r=0", description: "One of the most breathtaking natural wonders in the world, offering stunning views and outdoor adventures." },
+            { name: "New York City", image: "https://th.bing.com/th/id/R.9aa68a2fecbd24f60ee508803fc2d9e1?rik=bOfpYdgt4es%2bug&pid=ImgRaw&r=0", description: "The city that never sleeps, home to iconic landmarks like Times Square, Central Park, and the Statue of Liberty." },
+            { name: "Yellowstone National Park", image: "https://th.bing.com/th/id/R.d06fbe6c26775edda52bdd8b1ef209b4?rik=XyVOB2AnllWHXg&riu=http%3a%2f%2fwww.rvhive.com%2fwp-content%2fuploads%2f2018%2f11%2fgrand-prismatic-spring-in-yellowstone-national-park.jpg&ehk=rHPz%2bMRZ5p0PA99i3LHD%2bU6OEvPRxjCao5kiUB8p6FE%3d&risl=&pid=ImgRaw&r=0", description: "America's first national park, known for geysers, hot springs, and diverse wildlife." },
+            { name: "Las Vegas", image: "https://vegasexperience.com/wp-content/uploads/2023/01/Photo-of-Las-Vegas-Downtown-1920x1280.jpg", description: "The entertainment capital of the world, famous for its casinos, nightlife, and world-class shows." },
+            { name: "San Francisco", image: "https://cdn.britannica.com/13/77413-050-95217C0B/Golden-Gate-Bridge-San-Francisco.jpg", description: "A vibrant city with the Golden Gate Bridge, Alcatraz Island, and cable cars." }
+        ];
+        
+        const container = document.getElementById("places");
+        places.forEach(place => {
+            const card = document.createElement("div");
+            card.classList.add("card");
+            card.innerHTML = `
+                <img src="${place.image}" alt="${place.name}">
+                <h3>${place.name}</h3>
+                <p>${place.description}</p>
+            `;
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>
